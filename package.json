@@ -12,7 +12,6 @@
     "@react-three/fiber": "^8.8.7",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-3d-icons": "^1.0.2",
     "react-dom": "18.2.0",
     "three": "^0.145.0",
     "tuicss": "^2.1.1"
