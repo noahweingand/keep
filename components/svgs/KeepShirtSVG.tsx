@@ -1,6 +1,11 @@
 export const KeepShirtSVG = () => {
   return (
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <svg
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 300 300"
+      className="rotateComplex"
+    >
       <path
         fill="#ffffff"
         d="M58.7 40.7c.4 1 2.3 3.4 4.3 5.3s2.9 2.9 1.9 2.2c-1.4-1.1-1.7-1-2.2.8-.4 1.6 0 2 1.6 2 4.4 0 5-1.5 2.2-4.8-1.5-1.8-4-4.1-5.6-5.3-2.6-1.8-2.8-1.9-2.2-.2z"

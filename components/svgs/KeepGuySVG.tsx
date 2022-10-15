@@ -7,6 +7,7 @@ export const KeepGuySvg = () => {
       height="622.000000pt"
       viewBox="0 0 402.000000 622.000000"
       preserveAspectRatio="xMidYMid meet"
+      className="blackMirror"
     >
       <g
         transform="translate(0.000000,622.000000) scale(0.100000,-0.100000)"
