@@ -31,12 +31,8 @@ export const links = [
   },
   {
     id: 888,
-    href: 'https://google.com',
+    href: '/contact',
     text: 'Contact',
-  },
-  {
-    id: 999,
-    href: 'https://google.com',
-    text: 'Store',
+    isInternalLink: true,
   },
 ];

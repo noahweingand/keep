@@ -1,4 +1,3 @@
-import { Link } from './Link';
 import { tourDates } from '../constants/tour-dates';
 
 export const TourDates = () => {
@@ -23,9 +22,6 @@ export const TourDates = () => {
               <td className="text-center">{venue}</td>
               <td className="text-center">{location}</td>
               <td className="text-center">{date}</td>
-              <td className="text-center">
-                <Link href={info} text="Click here" noShadow={true} />
-              </td>
             </tr>
           );
         })}
