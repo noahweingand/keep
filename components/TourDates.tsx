@@ -12,11 +12,10 @@ export const TourDates = () => {
           <th>Venue</th>
           <th>Location</th>
           <th>Date</th>
-          <th>More Info</th>
         </tr>
       </thead>
       <tbody>
-        {sortedTourDates.map(({ id, venue, location, date, info }) => {
+        {sortedTourDates.map(({ id, venue, location, date }) => {
           return (
             <tr key={id} className="p-8">
               <td className="text-center">{venue}</td>
