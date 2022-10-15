@@ -25,11 +25,6 @@ export const links = [
     text: 'Youtube',
   },
   {
-    id: 666,
-    href: 'https://google.com',
-    text: 'Tour',
-  },
-  {
     id: 777,
     href: 'https://twitter.com/keepva',
     text: 'Twitter',

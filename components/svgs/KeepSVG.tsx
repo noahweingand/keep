@@ -1,4 +1,4 @@
-export const KeepSvg = () => {
+export const KeepGuySvg = () => {
   return (
     <svg
       version="1.0"

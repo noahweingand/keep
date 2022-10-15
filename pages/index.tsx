@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import { Header } from '../components/Header';
 import { LinkSection } from '../components/LinkSection';
+import { KeepShirtSVG } from '../components/svgs/KeepShirtSVG';
 import { TourDates } from '../components/TourDates';
 
 const Home: NextPage = () => {
@@ -16,11 +17,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="black-168 w-full h-full" style={{ width: '100vw', height: '100vh' }}>
-        <div className="m-auto grid content-center justify-center items-center">
+      <main className="black-168 w-full h-full m-auto" style={{ width: '100vw' }}>
+        <div className="grid content-center justify-center items-center">
           <Header />
           <LinkSection />
           <TourDates />
+          <KeepShirtSVG />
         </div>
       </main>
     </>
