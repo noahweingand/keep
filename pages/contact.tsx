@@ -1,18 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { ContactForm } from '../components/ContactForm';
-import { KeepGuySvg } from '../components/svgs/KeepGuySVG';
+import { KeepElfSVG } from '../components/svgs/KeepElfSVG';
 
 const Contact: NextPage = () => {
-  const router = useRouter();
-
-  const handleBackNav = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push('/');
-  };
-
   return (
     <>
       <Head>
@@ -23,16 +16,18 @@ const Contact: NextPage = () => {
         <link rel="icon" href="/keepelf_black.svg" />
       </Head>
 
-      <main className="tui-window content w-full h-full m-auto" style={{ width: '100vw' }}>
-        <fieldset className="tui-fieldset">
+      <main
+        className="tui-window content w-full h-full m-auto overflow-y-hidden h-screen"
+        style={{ width: '100vw', height: '100vh' }}
+      >
+        <fieldset className="tui-fieldset h-screen">
           <legend>
-            <button onClick={handleBackNav}>{'Return home'}</button>
+            <Link href="/">{'Return home'}</Link>
           </legend>
-          {/* <div className="flex justify-center pb-24">
-            <KeepGuySvg width={302} height={622} />
-          </div> */}
-          <div className="grid justify-center content-center h-screen">
+          <div className="flex justify-center content-center h-screen">
+            <KeepElfSVG color="#000000" />
             <ContactForm />
+            <KeepElfSVG color="#000000" />
           </div>
         </fieldset>
       </main>
