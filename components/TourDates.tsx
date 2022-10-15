@@ -2,6 +2,10 @@ import { Link } from './Link';
 import { tourDates } from '../constants/tour-dates';
 
 export const TourDates = () => {
+  const sortedTourDates = tourDates.sort((a, b) =>
+    a.date > b.date ? 1 : b.date > a.date ? -1 : 0,
+  );
+
   return (
     <table className="tui-table m-4 p-4">
       <thead>
@@ -13,7 +17,7 @@ export const TourDates = () => {
         </tr>
       </thead>
       <tbody>
-        {tourDates.map(({ id, venue, location, date, info }) => {
+        {sortedTourDates.map(({ id, venue, location, date, info }) => {
           return (
             <tr key={id} className="p-8">
               <td className="text-center">{venue}</td>

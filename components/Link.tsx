@@ -8,7 +8,7 @@ export const Link: React.FC<{ href: string; text: string; noShadow?: boolean }> 
     : 'tui-button text-lg tui-border-solid';
 
   return (
-    <a href={href} className={className}>
+    <a href={href} target="_blank" rel="noreferrer noopener" className={className}>
       {text}
     </a>
   );
