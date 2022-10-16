@@ -3,7 +3,7 @@ export const KeepGuySvg = () => {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="402.000000pt"
+      width="390.000000pt"
       height="622.000000pt"
       viewBox="0 0 402.000000 622.000000"
       preserveAspectRatio="xMidYMid meet"

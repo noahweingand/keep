@@ -1,4 +1,7 @@
-export const KeepElfSVG: React.FC<{ color: string }> = ({ color }) => {
+export const KeepElfSVG: React.FC<{ color: string; className: string }> = ({
+  color,
+  className,
+}) => {
   return (
     <svg
       version="1.0"
@@ -7,6 +10,7 @@ export const KeepElfSVG: React.FC<{ color: string }> = ({ color }) => {
       height="500.000000pt"
       viewBox="0 0 500.000000 500.000000"
       preserveAspectRatio="xMidYMid meet"
+      className={className}
     >
       <g
         transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
