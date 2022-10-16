@@ -6,7 +6,7 @@ export const TourDates = () => {
   );
 
   return (
-    <table className="text-xs sm:text-lg tui-table w-full m-8">
+    <table className="text-xs sm:text-lg tui-table w-full">
       <thead>
         <tr>
           <th>Venue</th>
