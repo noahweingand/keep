@@ -11,6 +11,7 @@ export const Header = () => {
         scale={10}
         style={{ height: '600px', width: '600px' }}
         spin={2}
+        className="hidden xl:block"
       />
       <KeepGuySvg />
       <Icon
@@ -20,6 +21,7 @@ export const Header = () => {
         scale={10}
         style={{ height: '600px', width: '600px' }}
         spin={2}
+        className="hidden xl:block"
       />
     </div>
   );
