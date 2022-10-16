@@ -29,7 +29,7 @@ export const ContactForm = () => {
     };
 
     try {
-      const res = await fetch('/api/email123', {
+      const res = await fetch('/api/email', {
         method: 'POST',
         body: JSON.stringify(body),
       });

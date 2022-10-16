@@ -3,7 +3,7 @@ import { KeepGuySvg } from './svgs/KeepGuySVG';
 
 export const Header = () => {
   return (
-    <div className="flex justify-around items-center">
+    <div className="flex justify-around items-center mb-20 sm:mb-0">
       <Icon
         file={'keepelf_white.svg' as unknown as undefined}
         color={'#ffffff'}

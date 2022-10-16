@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).send({
       result: text,
-      message: 'Email submitted',
+      message: 'Email sent',
     });
   } catch (e) {
     console.log(e);
