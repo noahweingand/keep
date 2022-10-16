@@ -25,9 +25,9 @@ const Contact: NextPage = () => {
             <Link href="/">{'Return home'}</Link>
           </legend>
           <div className="flex justify-center content-center h-screen">
-            <KeepElfSVG color="#000000" />
+            <KeepElfSVG color="#000000" className="hide-on-med-and-down" />
             <ContactForm />
-            <KeepElfSVG color="#000000" />
+            <KeepElfSVG color="#000000" className="hide-on-med-and-down show-on-large" />
           </div>
         </fieldset>
       </main>
