@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 export const ContactForm = () => {
   const [isReadOnly, setIsReadOnly] = useState<boolean>(false);
@@ -34,17 +35,19 @@ export const ContactForm = () => {
       });
 
       if (res.status === 200) {
+        toast.success('Sent');
         setFirstName('');
         setLastName('');
         setEmail('');
         setMessage('');
       } else {
+        toast.error('Error!');
         console.log(res);
       }
 
       setIsReadOnly(false);
     } catch (e) {
-      console.log(e);
+      toast.error('Error!');
     }
   };
 

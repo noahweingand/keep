@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Toaster } from 'react-hot-toast';
 
 import { ContactForm } from '../components/ContactForm';
 import { KeepElfSVG } from '../components/svgs/KeepElfSVG';
@@ -20,14 +21,15 @@ const Contact: NextPage = () => {
         className="tui-window content w-full h-full m-auto overflow-y-hidden h-screen"
         style={{ width: '100vw', height: '100vh' }}
       >
+        <Toaster position="top-right" />
         <fieldset className="tui-fieldset h-screen">
           <legend>
             <Link href="/">{'Return home'}</Link>
           </legend>
           <div className="flex justify-center content-center h-screen">
-            <KeepElfSVG color="#000000" className="hide-on-med-and-down" />
+            <KeepElfSVG color="#000000" className="hidden lg:block" />
             <ContactForm />
-            <KeepElfSVG color="#000000" className="hide-on-med-and-down show-on-large" />
+            <KeepElfSVG color="#000000" className="hidden 2xl:block" />
           </div>
         </fieldset>
       </main>
