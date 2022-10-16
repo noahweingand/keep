@@ -32,7 +32,7 @@
   transform-origin: bottom center;
   animation-name: blackMirror;
   animation-duration: 0.01s;
-  animation-iteration-count: 600;
+  animation-iteration-count: 500;
 }
 
 @keyframes rotateComplex {
