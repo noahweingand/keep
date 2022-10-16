@@ -3,6 +3,7 @@ export const LiveIframe = () => {
     <div className="w-full h-full md:flex justify-evenly content-center">
       <img
         className="w-full md:w-1/3 lg:m-8"
+        aria-label="Keep Promo"
         src="/keep-promo-white.jpg"
         width="520"
         height="215"
