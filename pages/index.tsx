@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import { Header } from '../components/Header';
 import { LinkSection } from '../components/LinkSection';
+import { LiveIframe } from '../components/PromoSection';
 import { KeepShirtSVG } from '../components/svgs/KeepShirtSVG';
 import { TourDates } from '../components/TourDates';
 
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <main className="black-168 w-full h-full m-auto" style={{ width: '100vw' }}>
         <Header />
         <LinkSection />
+        <LiveIframe />
         <TourDates />
         <KeepShirtSVG />
       </main>
