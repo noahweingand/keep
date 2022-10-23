@@ -1,26 +1,20 @@
 export const tourDates = [
   {
     id: 111,
-    venue: 'Crystal Palace',
-    date: '2023-05-04',
-    location: 'Richmond, VA',
+    venue: 'Brooklyn Steel',
+    date: '2022-11-6',
+    location: 'Brooklyn, NY',
   },
   {
     id: 222,
-    venue: 'The Camel',
-    date: '2022-10-18',
-    location: 'Richmond, VA',
+    venue: 'TV EYE',
+    date: '2022-12-16',
+    location: 'Ridgewood, NY',
   },
   {
     id: 333,
-    venue: 'Microbrewery',
-    date: '2022-11-29',
+    venue: 'The Norva',
+    date: '2022-12-17',
     location: 'Norfolk, VA',
-  },
-  {
-    id: 444,
-    venue: 'Space Needle',
-    date: '2022-11-30',
-    location: 'Toronto, CA',
   },
 ];
