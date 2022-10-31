@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <Head>
         <title>keep</title>
         <meta name="description" content="keep.band" />
-        <meta name="keywords" content="Keep, band, music, shoegaze"></meta>
+        <meta name="keywords" content="Keep, band, music, shoegaze" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="/keepelf_black.svg" />
