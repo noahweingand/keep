@@ -1,9 +1,9 @@
 export const tourDates = [
   {
     id: 111,
-    venue: 'Brooklyn Steel',
-    date: '2022-11-6',
-    location: 'Brooklyn, NY',
+    venue: 'The Camel',
+    date: '2022-12-15',
+    location: 'Richmond, VA',
   },
   {
     id: 222,
@@ -13,7 +13,7 @@ export const tourDates = [
   },
   {
     id: 333,
-    venue: 'The Norva',
+    venue: 'The NorVa',
     date: '2022-12-17',
     location: 'Norfolk, VA',
   },

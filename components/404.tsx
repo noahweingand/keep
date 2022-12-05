@@ -15,7 +15,7 @@ export const Page404Content = () => {
           </p>
         </div>
         <div className="flex justify-end">
-          <img role="presentation" src="pcstartup2.png" width="200px" height="150px" />
+          <img alt="presentation" src="pcstartup2.png" width="200px" height="150px" />
         </div>
       </div>
       <div>ASUS P4T533-C ACPI BIOS Revision 1007 Beta 001</div>
@@ -37,13 +37,11 @@ export const Page404Content = () => {
       <div className="red-168 mb-12">Critical failure!</div>
       <div className="tui-statusbar absolute black white-text">
         <ul className="flex">
-          <li>
-            Click{' '}
-            <Link href="/">
-              <b>HERE</b>
-            </Link>{' '}
-            to return, <b>Alt+F2</b> to enter EZ flash utility
-          </li>
+          <Link href="/">
+            <li>
+              Click <b>HERE</b> to return, <b>Alt+F2</b> to enter EZ flash utility
+            </li>
+          </Link>
         </ul>
         <ul>
           <li>08/20/2002-1850E/ICH2/W627-P4T533-C</li>

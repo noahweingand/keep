@@ -4,7 +4,7 @@ export const LiveIframe = () => {
       <img
         className="w-full md:w-1/3 lg:m-8"
         aria-label="Keep Promo"
-        src="/keep-promo-white.jpg"
+        src="/keep_band.jpeg"
         width="520"
         height="215"
       />
