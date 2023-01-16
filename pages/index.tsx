@@ -23,6 +23,7 @@ const Home: NextPage = () => {
         <Header />
         <LinkSection />
         <PromoSection />
+        {/* @ts-ignore */}
         <TourDates />
         <KeepShirtSVG />
       </main>
