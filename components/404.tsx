@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Page404Content = () => {
@@ -8,14 +9,26 @@ export const Page404Content = () => {
     >
       <div className="grid grid-cols-3 mb-8">
         <div className="flex items-start col-span-2">
-          <img role="presentation" src="pcstartup1.png" width="40px" height="40px" />
+          <Image
+            role="presentation"
+            alt="presentation"
+            src="/pcstartup1.png"
+            width="40px"
+            height="40px"
+          />
           <p className="ml-2">
             Award Medallion BIOS v6.0, An Energy Star Ally <br></br> Copyright (C) 1984-2001, Award
             Software, Inc.
           </p>
         </div>
         <div className="flex justify-end">
-          <img alt="presentation" src="pcstartup2.png" width="200px" height="150px" />
+          <Image
+            role="presentation"
+            alt="presentation"
+            src="/pcstartup2.png"
+            width="200px"
+            height="150px"
+          />
         </div>
       </div>
       <div>ASUS P4T533-C ACPI BIOS Revision 1007 Beta 001</div>
