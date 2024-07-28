@@ -12,7 +12,10 @@ export const TourDates = () => {
 
   return dates?.some((value) => value != undefined) ? (
     <div className="flex justify-center">
-      <table className="text-xs md:text-lg tui-table w-11/12 md:w-5/6 lg:m-8">
+      <table
+        className="text-xs leading-8 md:text-lg tui-table w-11/12 md:w-5/6 lg:m-8"
+        // style={{ fontSize: '10px' }}
+      >
         <thead>
           <tr>
             <th>Venue</th>
@@ -25,9 +28,9 @@ export const TourDates = () => {
             dates.map((tourDate) => {
               return (
                 <tr key={tourDate?.id}>
-                  <td className="text-center">{tourDate?.venue}</td>
-                  <td className="text-center">{tourDate?.location}</td>
-                  <td className="text-center">{tourDate?.date}</td>
+                  <td className="text-center w-1/3">{tourDate?.venue}</td>
+                  <td className="text-center w-1/3">{tourDate?.location}</td>
+                  <td className="text-center w-2/5 text-[11px] md:text-lg">{tourDate?.date}</td>
                 </tr>
               );
             })}
