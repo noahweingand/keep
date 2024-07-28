@@ -21,11 +21,11 @@ export const PromoSection = () => {
         ></iframe>
       </div>
       <div className="w-full mt-12">
-        <Marquee className="text-white" speed={75} gradient={false}>
+        {/* <Marquee className="text-white" speed={75} gradient={false}>
           <span>
             <NavLink href="https://keepva.bandcamp.com/" text="Happy In Here - out 2/3/23" />
           </span>
-        </Marquee>
+        </Marquee> */}
       </div>
     </>
   );
