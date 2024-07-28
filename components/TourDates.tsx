@@ -12,7 +12,7 @@ export const TourDates = () => {
 
   return dates?.some((value) => value != undefined) ? (
     <div className="flex justify-center">
-      <table className="text-xs sm:text-lg tui-table w-11/12 md:w-5/6 lg:m-8">
+      <table className="text-xs md:text-lg tui-table w-11/12 md:w-5/6 lg:m-8">
         <thead>
           <tr>
             <th>Venue</th>
