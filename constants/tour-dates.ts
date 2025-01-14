@@ -101,4 +101,70 @@ export const tourDates = [
     date: '2024-11-02',
     location: 'Richmond, VA (US)',
   },
+  {
+    id: 18,
+    venue: 'TV EYE',
+    date: '2025-02-07',
+    location: 'New York, NY',
+  },
+  {
+    id: 19,
+    venue: 'Bar Bad Ending',
+    date: '2025-02-08',
+    location: 'Rochester, NY',
+  },
+  {
+    id: 20,
+    venue: 'Foto Club',
+    date: '2025-02-09',
+    location: 'Philadelphia, PA',
+  },
+  {
+    id: 21,
+    venue: 'Banditos',
+    date: '2025-02-10',
+    location: 'Richmond, VA',
+  },
+  {
+    id: 22,
+    venue: 'The Dome',
+    date: '2025-06-07',
+    location: 'Virginia Beach, VA'
+  },
+  {
+    id: 23,
+    venue: 'The Fillmore Silver Spring',
+    date: '2025-06-09',
+    location: 'Silver Spring, MD'
+  },
+  {
+    id: 24,
+    venue: 'The Fillmore Philadelphia',
+    date: '2025-06-10',
+    location: 'Philadelphia, PA'
+  },
+  {
+    id: 25,
+    venue: 'House of Blues',
+    date: '2025-06-11',
+    location: 'Boston, MA'
+  },
+  {
+    id: 26,
+    venue: 'Brooklyn Paramount',
+    date: '2025-06-12',
+    location: 'New York, NY'
+  },
+  {
+    id: 27,
+    venue: 'Brooklyn Paramount',
+    date: '2025-06-13',
+    location: 'New York, NY'
+  },
+  {
+    id: 28,
+    venue: 'Paramount Theater',
+    date: '2025-06-14',
+    location: 'Huntington, NY'
+  }
 ];
