@@ -1,8 +1,0 @@
-/* ./styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  cursor: url('/rune_full_helm.cur'), pointer;
-}

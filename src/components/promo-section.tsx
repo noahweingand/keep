@@ -1,10 +1,11 @@
-import Marquee from 'react-fast-marquee';
-import { NavLink } from './Link';
+import Image from "next/image";
+
 export const PromoSection = () => {
   return (
     <>
       <div className="w-full h-full md:flex justify-evenly content-center">
-        <img
+        <Image
+          alt="Promotional photo of Keep"
           className="w-full md:w-1/3 lg:m-8"
           aria-label="Keep Promo"
           src="/keep_band.jpeg"

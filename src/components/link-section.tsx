@@ -1,5 +1,5 @@
-import { links } from '../constants/links';
-import { NavLink } from './Link';
+import { links } from "../constants/links";
+import { NavLink } from "./nav-link";
 
 export const LinkSection = () => {
   return (

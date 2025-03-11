@@ -1,25 +1,20 @@
-import { useState, useEffect } from 'react';
-import toast from 'react-hot-toast';
+"use client";
 
-export const ContactForm = () => {
-  const [isReadOnly, setIsReadOnly] = useState<boolean>(false);
-  const [isSubmitDisabled, setIsSubmitDisabled] = useState<boolean>(true);
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+import { useState } from "react";
+import toast from "react-hot-toast";
 
-  useEffect(() => {
-    if (firstName && lastName && email && message) {
-      setIsSubmitDisabled(false);
-    } else {
-      setIsSubmitDisabled(true);
-    }
-  }, [firstName, lastName, email, message]);
+export function ContactForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const isSubmitDisabled = Boolean(firstName && lastName && email && message);
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    setIsReadOnly(true);
+    setIsLoading(true);
 
     const body = {
       firstName,
@@ -29,25 +24,26 @@ export const ContactForm = () => {
     };
 
     try {
-      const res = await fetch('/api/email', {
-        method: 'POST',
+      const res = await fetch("/api/email", {
+        method: "POST",
         body: JSON.stringify(body),
       });
 
       if (res.status === 200) {
-        toast.success('Sent');
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setMessage('');
+        toast.success("Sent");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
       } else {
-        toast.error('Error!');
+        toast.error("Try again later!");
         console.log(res);
       }
-
-      setIsReadOnly(false);
     } catch (e) {
-      toast.error('Error!');
+      console.log(e);
+      toast.error("Try again later");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -64,7 +60,7 @@ export const ContactForm = () => {
             placeholder="..."
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            readOnly={isReadOnly}
+            readOnly={isLoading}
           />
         </fieldset>
         <fieldset className="tui-fieldset w-full md:w-1/2 px-3">
@@ -77,7 +73,7 @@ export const ContactForm = () => {
             placeholder="..."
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            readOnly={isReadOnly}
+            readOnly={isLoading}
           />
         </fieldset>
       </div>
@@ -92,7 +88,7 @@ export const ContactForm = () => {
             placeholder="..."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            readOnly={isReadOnly}
+            readOnly={isLoading}
           />
         </fieldset>
       </div>
@@ -106,7 +102,7 @@ export const ContactForm = () => {
             placeholder="..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            readOnly={isReadOnly}
+            readOnly={isLoading}
           ></textarea>
         </fieldset>
       </div>
@@ -114,8 +110,8 @@ export const ContactForm = () => {
         <button
           className={
             isSubmitDisabled
-              ? 'tui-button scandisk-button white-168 white-text text-lg disabled'
-              : 'tui-button scandisk-button white-168 white-text text-lg'
+              ? "tui-button scandisk-button white-168 white-text text-lg disabled"
+              : "tui-button scandisk-button white-168 white-text text-lg"
           }
           disabled={isSubmitDisabled}
           type="submit"
@@ -125,4 +121,4 @@ export const ContactForm = () => {
       </div>
     </form>
   );
-};
+}

@@ -12,7 +12,7 @@ import {
   ShapeUtils,
   Vector2,
   Vector3,
-} from 'three';
+} from "three";
 
 export class SVGLoader extends Loader {
   constructor(manager) {
@@ -22,7 +22,7 @@ export class SVGLoader extends Loader {
     this.defaultDPI = 90;
 
     // Accepted units: 'mm', 'cm', 'in', 'pt', 'pc', 'px'
-    this.defaultUnit = 'px';
+    this.defaultUnit = "px";
   }
 
   load(url, onLoad, onProgress, onError) {
@@ -65,60 +65,60 @@ export class SVGLoader extends Loader {
       let path = null;
 
       switch (node.nodeName) {
-        case 'svg':
+        case "svg":
           break;
 
-        case 'style':
+        case "style":
           parseCSSStylesheet(node);
           break;
 
-        case 'g':
+        case "g":
           style = parseStyle(node, style);
           break;
 
-        case 'path':
+        case "path":
           style = parseStyle(node, style);
-          if (node.hasAttribute('d')) path = parsePathNode(node);
+          if (node.hasAttribute("d")) path = parsePathNode(node);
           break;
 
-        case 'rect':
+        case "rect":
           style = parseStyle(node, style);
           path = parseRectNode(node);
           break;
 
-        case 'polygon':
+        case "polygon":
           style = parseStyle(node, style);
           path = parsePolygonNode(node);
           break;
 
-        case 'polyline':
+        case "polyline":
           style = parseStyle(node, style);
           path = parsePolylineNode(node);
           break;
 
-        case 'circle':
+        case "circle":
           style = parseStyle(node, style);
           path = parseCircleNode(node);
           break;
 
-        case 'ellipse':
+        case "ellipse":
           style = parseStyle(node, style);
           path = parseEllipseNode(node);
           break;
 
-        case 'line':
+        case "line":
           style = parseStyle(node, style);
           path = parseLineNode(node);
           break;
 
-        case 'defs':
+        case "defs":
           isDefsNode = true;
           break;
 
-        case 'use':
+        case "use":
           style = parseStyle(node, style);
 
-          const href = node.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '';
+          const href = node.getAttributeNS("http://www.w3.org/1999/xlink", "href") || "";
           const usedNodeId = href.substring(1);
           const usedNode = node.viewportElement.getElementById(usedNodeId);
           if (usedNode) {
@@ -134,7 +134,7 @@ export class SVGLoader extends Loader {
       }
 
       if (path) {
-        if (style.fill !== undefined && style.fill !== 'none') {
+        if (style.fill !== undefined && style.fill !== "none") {
           path.color.setStyle(style.fill);
         }
 
@@ -150,7 +150,7 @@ export class SVGLoader extends Loader {
       for (let i = 0; i < childNodes.length; i++) {
         const node = childNodes[i];
 
-        if (isDefsNode && node.nodeName !== 'style' && node.nodeName !== 'defs') {
+        if (isDefsNode && node.nodeName !== "style" && node.nodeName !== "defs") {
           // Ignore everything in defs except CSS style definitions
           // and nested defs, because it is OK by the standard to have
           // <style/> there.
@@ -181,7 +181,7 @@ export class SVGLoader extends Loader {
       let isFirstPoint = true;
       let doSetFirstPoint = false;
 
-      const d = node.getAttribute('d');
+      const d = node.getAttribute("d");
 
       // console.log( d );
 
@@ -201,7 +201,7 @@ export class SVGLoader extends Loader {
         let numbers;
 
         switch (type) {
-          case 'M':
+          case "M":
             numbers = parseFloats(data);
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
               point.x = numbers[j + 0];
@@ -220,7 +220,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'H':
+          case "H":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j++) {
@@ -234,7 +234,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'V':
+          case "V":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j++) {
@@ -248,7 +248,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'L':
+          case "L":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
@@ -263,7 +263,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'C':
+          case "C":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 6) {
@@ -285,7 +285,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'S':
+          case "S":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 4) {
@@ -307,7 +307,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'Q':
+          case "Q":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 4) {
@@ -322,7 +322,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'T':
+          case "T":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
@@ -339,7 +339,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'A':
+          case "A":
             numbers = parseFloats(data, [3, 4], 7);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 7) {
@@ -367,7 +367,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'm':
+          case "m":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
@@ -387,7 +387,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'h':
+          case "h":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j++) {
@@ -401,7 +401,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'v':
+          case "v":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j++) {
@@ -415,7 +415,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'l':
+          case "l":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
@@ -430,7 +430,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'c':
+          case "c":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 6) {
@@ -452,7 +452,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 's':
+          case "s":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 4) {
@@ -474,7 +474,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'q':
+          case "q":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 4) {
@@ -494,7 +494,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 't':
+          case "t":
             numbers = parseFloats(data);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 2) {
@@ -511,7 +511,7 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'a':
+          case "a":
             numbers = parseFloats(data, [3, 4], 7);
 
             for (let j = 0, jl = numbers.length; j < jl; j += 7) {
@@ -539,8 +539,8 @@ export class SVGLoader extends Loader {
 
             break;
 
-          case 'Z':
-          case 'z':
+          case "Z":
+          case "z":
             path.currentPath.autoClose = true;
 
             if (path.currentPath.curves.length > 0) {
@@ -580,7 +580,7 @@ export class SVGLoader extends Loader {
         for (let j = 0; j < selectorList.length; j++) {
           // Remove empty rules
           const definitions = Object.fromEntries(
-            Object.entries(stylesheet.style).filter(([, v]) => v !== ''),
+            Object.entries(stylesheet.style).filter(([, v]) => v !== ""),
           );
 
           stylesheets[selectorList[j]] = Object.assign(
@@ -690,12 +690,12 @@ export class SVGLoader extends Loader {
      * rounded corner should be rendered to elliptical arc, but bezier curve does the job well enough
      */
     function parseRectNode(node) {
-      const x = parseFloatWithUnits(node.getAttribute('x') || 0);
-      const y = parseFloatWithUnits(node.getAttribute('y') || 0);
-      const rx = parseFloatWithUnits(node.getAttribute('rx') || node.getAttribute('ry') || 0);
-      const ry = parseFloatWithUnits(node.getAttribute('ry') || node.getAttribute('rx') || 0);
-      const w = parseFloatWithUnits(node.getAttribute('width'));
-      const h = parseFloatWithUnits(node.getAttribute('height'));
+      const x = parseFloatWithUnits(node.getAttribute("x") || 0);
+      const y = parseFloatWithUnits(node.getAttribute("y") || 0);
+      const rx = parseFloatWithUnits(node.getAttribute("rx") || node.getAttribute("ry") || 0);
+      const ry = parseFloatWithUnits(node.getAttribute("ry") || node.getAttribute("rx") || 0);
+      const w = parseFloatWithUnits(node.getAttribute("width"));
+      const h = parseFloatWithUnits(node.getAttribute("height"));
 
       // Ellipse arc to Bezier approximation Coefficient (Inversed). See:
       // https://spencermortensen.com/articles/bezier-circle/
@@ -753,7 +753,7 @@ export class SVGLoader extends Loader {
 
       let index = 0;
 
-      node.getAttribute('points').replace(regex, iterator);
+      node.getAttribute("points").replace(regex, iterator);
 
       path.currentPath.autoClose = true;
 
@@ -780,7 +780,7 @@ export class SVGLoader extends Loader {
 
       let index = 0;
 
-      node.getAttribute('points').replace(regex, iterator);
+      node.getAttribute("points").replace(regex, iterator);
 
       path.currentPath.autoClose = false;
 
@@ -788,9 +788,9 @@ export class SVGLoader extends Loader {
     }
 
     function parseCircleNode(node) {
-      const x = parseFloatWithUnits(node.getAttribute('cx') || 0);
-      const y = parseFloatWithUnits(node.getAttribute('cy') || 0);
-      const r = parseFloatWithUnits(node.getAttribute('r') || 0);
+      const x = parseFloatWithUnits(node.getAttribute("cx") || 0);
+      const y = parseFloatWithUnits(node.getAttribute("cy") || 0);
+      const r = parseFloatWithUnits(node.getAttribute("r") || 0);
 
       const subpath = new Path();
       subpath.absarc(x, y, r, 0, Math.PI * 2);
@@ -802,10 +802,10 @@ export class SVGLoader extends Loader {
     }
 
     function parseEllipseNode(node) {
-      const x = parseFloatWithUnits(node.getAttribute('cx') || 0);
-      const y = parseFloatWithUnits(node.getAttribute('cy') || 0);
-      const rx = parseFloatWithUnits(node.getAttribute('rx') || 0);
-      const ry = parseFloatWithUnits(node.getAttribute('ry') || 0);
+      const x = parseFloatWithUnits(node.getAttribute("cx") || 0);
+      const y = parseFloatWithUnits(node.getAttribute("cy") || 0);
+      const rx = parseFloatWithUnits(node.getAttribute("rx") || 0);
+      const ry = parseFloatWithUnits(node.getAttribute("ry") || 0);
 
       const subpath = new Path();
       subpath.absellipse(x, y, rx, ry, 0, Math.PI * 2);
@@ -817,10 +817,10 @@ export class SVGLoader extends Loader {
     }
 
     function parseLineNode(node) {
-      const x1 = parseFloatWithUnits(node.getAttribute('x1') || 0);
-      const y1 = parseFloatWithUnits(node.getAttribute('y1') || 0);
-      const x2 = parseFloatWithUnits(node.getAttribute('x2') || 0);
-      const y2 = parseFloatWithUnits(node.getAttribute('y2') || 0);
+      const x1 = parseFloatWithUnits(node.getAttribute("x1") || 0);
+      const y1 = parseFloatWithUnits(node.getAttribute("y1") || 0);
+      const x2 = parseFloatWithUnits(node.getAttribute("x2") || 0);
+      const y2 = parseFloatWithUnits(node.getAttribute("y2") || 0);
 
       const path = new ShapePath();
       path.moveTo(x1, y1);
@@ -837,37 +837,37 @@ export class SVGLoader extends Loader {
 
       let stylesheetStyles = {};
 
-      if (node.hasAttribute('class')) {
+      if (node.hasAttribute("class")) {
         const classSelectors = node
-          .getAttribute('class')
+          .getAttribute("class")
           .split(/\s/)
           .filter(Boolean)
           .map((i) => i.trim());
 
         for (let i = 0; i < classSelectors.length; i++) {
-          stylesheetStyles = Object.assign(stylesheetStyles, stylesheets['.' + classSelectors[i]]);
+          stylesheetStyles = Object.assign(stylesheetStyles, stylesheets["." + classSelectors[i]]);
         }
       }
 
-      if (node.hasAttribute('id')) {
+      if (node.hasAttribute("id")) {
         stylesheetStyles = Object.assign(
           stylesheetStyles,
-          stylesheets['#' + node.getAttribute('id')],
+          stylesheets["#" + node.getAttribute("id")],
         );
       }
 
       function addStyle(svgName, jsName, adjustFunction) {
         if (adjustFunction === undefined)
           adjustFunction = function copy(v) {
-            if (v.startsWith('url'))
-              console.warn('SVGLoader: url access in attributes is not implemented.');
+            if (v.startsWith("url"))
+              console.warn("SVGLoader: url access in attributes is not implemented.");
 
             return v;
           };
 
         if (node.hasAttribute(svgName)) style[jsName] = adjustFunction(node.getAttribute(svgName));
         if (stylesheetStyles[svgName]) style[jsName] = adjustFunction(stylesheetStyles[svgName]);
-        if (node.style && node.style[svgName] !== '')
+        if (node.style && node.style[svgName] !== "")
           style[jsName] = adjustFunction(node.style[svgName]);
       }
 
@@ -879,17 +879,17 @@ export class SVGLoader extends Loader {
         return Math.max(0, parseFloatWithUnits(v));
       }
 
-      addStyle('fill', 'fill');
-      addStyle('fill-opacity', 'fillOpacity', clamp);
-      addStyle('fill-rule', 'fillRule');
-      addStyle('opacity', 'opacity', clamp);
-      addStyle('stroke', 'stroke');
-      addStyle('stroke-opacity', 'strokeOpacity', clamp);
-      addStyle('stroke-width', 'strokeWidth', positive);
-      addStyle('stroke-linejoin', 'strokeLineJoin');
-      addStyle('stroke-linecap', 'strokeLineCap');
-      addStyle('stroke-miterlimit', 'strokeMiterLimit', positive);
-      addStyle('visibility', 'visibility');
+      addStyle("fill", "fill");
+      addStyle("fill-opacity", "fillOpacity", clamp);
+      addStyle("fill-rule", "fillRule");
+      addStyle("opacity", "opacity", clamp);
+      addStyle("stroke", "stroke");
+      addStyle("stroke-opacity", "strokeOpacity", clamp);
+      addStyle("stroke-width", "strokeWidth", positive);
+      addStyle("stroke-linejoin", "strokeLineJoin");
+      addStyle("stroke-linecap", "strokeLineCap");
+      addStyle("stroke-miterlimit", "strokeMiterLimit", positive);
+      addStyle("visibility", "visibility");
 
       return style;
     }
@@ -903,8 +903,8 @@ export class SVGLoader extends Loader {
     // from https://github.com/ppvg/svg-numbers (MIT License)
 
     function parseFloats(input, flags, stride) {
-      if (typeof input !== 'string') {
-        throw new TypeError('Invalid input: ' + typeof input);
+      if (typeof input !== "string") {
+        throw new TypeError("Invalid input: " + typeof input);
       }
 
       // Character groups
@@ -927,24 +927,24 @@ export class SVGLoader extends Loader {
 
       let state = SEP;
       let seenComma = true;
-      let number = '',
-        exponent = '';
+      let number = "",
+        exponent = "";
       const result = [];
 
       function throwSyntaxError(current, i, partial) {
-        const error = new SyntaxError('Unexpected character "' + current + '" at index ' + i + '.');
+        const error = new SyntaxError('Unexpected character "' + current + '" at index ' + i + ".");
         error.partial = partial;
         throw error;
       }
 
       function newNumber() {
-        if (number !== '') {
-          if (exponent === '') result.push(Number(number));
+        if (number !== "") {
+          if (exponent === "") result.push(Number(number));
           else result.push(Number(number) * Math.pow(10, Number(exponent)));
         }
 
-        number = '';
-        exponent = '';
+        number = "";
+        exponent = "";
       }
 
       let current;
@@ -1032,7 +1032,7 @@ export class SVGLoader extends Loader {
           }
 
           // throw on double decimal points (e.g. "1..2")
-          if (RE.POINT.test(current) && number[number.length - 1] === '.') {
+          if (RE.POINT.test(current) && number[number.length - 1] === ".") {
             throwSyntaxError(current, i, result);
           }
         }
@@ -1045,7 +1045,7 @@ export class SVGLoader extends Loader {
           }
 
           if (RE.SIGN.test(current)) {
-            if (exponent === '') {
+            if (exponent === "") {
               exponent += current;
               continue;
             }
@@ -1086,7 +1086,7 @@ export class SVGLoader extends Loader {
 
     // Units
 
-    const units = ['mm', 'cm', 'in', 'pt', 'pc', 'px'];
+    const units = ["mm", "cm", "in", "pt", "pc", "px"];
 
     // Conversion: [ fromUnit ][ toUnit ] (-1 means dpi dependent)
     const unitConversion = {
@@ -1136,9 +1136,9 @@ export class SVGLoader extends Loader {
     };
 
     function parseFloatWithUnits(string) {
-      let theUnit = 'px';
+      let theUnit = "px";
 
-      if (typeof string === 'string' || string instanceof String) {
+      if (typeof string === "string" || string instanceof String) {
         for (let i = 0, n = units.length; i < n; i++) {
           const u = units[i];
 
@@ -1152,17 +1152,17 @@ export class SVGLoader extends Loader {
 
       let scale = undefined;
 
-      if (theUnit === 'px' && scope.defaultUnit !== 'px') {
+      if (theUnit === "px" && scope.defaultUnit !== "px") {
         // Conversion scale from  pixels to inches, then to default units
 
-        scale = unitConversion['in'][scope.defaultUnit] / scope.defaultDPI;
+        scale = unitConversion["in"][scope.defaultUnit] / scope.defaultDPI;
       } else {
         scale = unitConversion[theUnit][scope.defaultUnit];
 
         if (scale < 0) {
           // Conversion scale to pixels
 
-          scale = unitConversion[theUnit]['in'] * scope.defaultDPI;
+          scale = unitConversion[theUnit]["in"] * scope.defaultDPI;
         }
       }
 
@@ -1174,8 +1174,8 @@ export class SVGLoader extends Loader {
     function getNodeTransform(node) {
       if (
         !(
-          node.hasAttribute('transform') ||
-          (node.nodeName === 'use' && (node.hasAttribute('x') || node.hasAttribute('y')))
+          node.hasAttribute("transform") ||
+          (node.nodeName === "use" && (node.hasAttribute("x") || node.hasAttribute("y")))
         )
       ) {
         return null;
@@ -1197,22 +1197,22 @@ export class SVGLoader extends Loader {
       const transform = new Matrix3();
       const currentTransform = tempTransform0;
 
-      if (node.nodeName === 'use' && (node.hasAttribute('x') || node.hasAttribute('y'))) {
-        const tx = parseFloatWithUnits(node.getAttribute('x'));
-        const ty = parseFloatWithUnits(node.getAttribute('y'));
+      if (node.nodeName === "use" && (node.hasAttribute("x") || node.hasAttribute("y"))) {
+        const tx = parseFloatWithUnits(node.getAttribute("x"));
+        const ty = parseFloatWithUnits(node.getAttribute("y"));
 
         transform.translate(tx, ty);
       }
 
-      if (node.hasAttribute('transform')) {
-        const transformsTexts = node.getAttribute('transform').split(')');
+      if (node.hasAttribute("transform")) {
+        const transformsTexts = node.getAttribute("transform").split(")");
 
         for (let tIndex = transformsTexts.length - 1; tIndex >= 0; tIndex--) {
           const transformText = transformsTexts[tIndex].trim();
 
-          if (transformText === '') continue;
+          if (transformText === "") continue;
 
-          const openParPos = transformText.indexOf('(');
+          const openParPos = transformText.indexOf("(");
           const closeParPos = transformText.length;
 
           if (openParPos > 0 && openParPos < closeParPos) {
@@ -1223,7 +1223,7 @@ export class SVGLoader extends Loader {
             currentTransform.identity();
 
             switch (transformType) {
-              case 'translate':
+              case "translate":
                 if (array.length >= 1) {
                   const tx = array[0];
                   let ty = tx;
@@ -1237,7 +1237,7 @@ export class SVGLoader extends Loader {
 
                 break;
 
-              case 'rotate':
+              case "rotate":
                 if (array.length >= 1) {
                   let angle = 0;
                   let cx = 0;
@@ -1262,7 +1262,7 @@ export class SVGLoader extends Loader {
 
                 break;
 
-              case 'scale':
+              case "scale":
                 if (array.length >= 1) {
                   const scaleX = array[0];
                   let scaleY = scaleX;
@@ -1276,7 +1276,7 @@ export class SVGLoader extends Loader {
 
                 break;
 
-              case 'skewX':
+              case "skewX":
                 if (array.length === 1) {
                   currentTransform.set(
                     1,
@@ -1293,7 +1293,7 @@ export class SVGLoader extends Loader {
 
                 break;
 
-              case 'skewY':
+              case "skewY":
                 if (array.length === 1) {
                   currentTransform.set(
                     1,
@@ -1310,7 +1310,7 @@ export class SVGLoader extends Loader {
 
                 break;
 
-              case 'matrix':
+              case "matrix":
                 if (array.length === 6) {
                   currentTransform.set(
                     array[0],
@@ -1369,7 +1369,7 @@ export class SVGLoader extends Loader {
           } else if (curve.isEllipseCurve) {
             if (isRotated) {
               console.warn(
-                'SVGLoader: Elliptic arc or ellipse rotation or skewing is not implemented.',
+                "SVGLoader: Elliptic arc or ellipse rotation or skewing is not implemented.",
               );
             }
 
@@ -1415,15 +1415,15 @@ export class SVGLoader extends Loader {
 
     const currentTransform = new Matrix3();
 
-    const xml = new DOMParser().parseFromString(text, 'image/svg+xml'); // application/xml
+    const xml = new DOMParser().parseFromString(text, "image/svg+xml"); // application/xml
 
     parseNode(xml.documentElement, {
-      fill: '#000',
+      fill: "#000",
       fillOpacity: 1,
       strokeOpacity: 1,
       strokeWidth: 1,
-      strokeLineJoin: 'miter',
-      strokeLineCap: 'butt',
+      strokeLineJoin: "miter",
+      strokeLineCap: "butt",
       strokeMiterLimit: 4,
     });
 
@@ -1626,8 +1626,8 @@ export class SVGLoader extends Loader {
     }
 
     function isHoleTo(simplePath, allPaths, scanlineMinX, scanlineMaxX, _fillRule) {
-      if (_fillRule === null || _fillRule === undefined || _fillRule === '') {
-        _fillRule = 'nonzero';
+      if (_fillRule === null || _fillRule === undefined || _fillRule === "") {
+        _fillRule = "nonzero";
       }
 
       const centerBoundingBox = new Vector2();
@@ -1677,7 +1677,7 @@ export class SVGLoader extends Loader {
 
       stack.push(simplePath.identifier);
 
-      if (_fillRule === 'evenodd') {
+      if (_fillRule === "evenodd") {
         const isHole = stack.length % 2 === 0 ? true : false;
         const isHoleFor = stack[stack.length - 2];
 
@@ -1686,7 +1686,7 @@ export class SVGLoader extends Loader {
           isHole: isHole,
           for: isHoleFor,
         };
-      } else if (_fillRule === 'nonzero') {
+      } else if (_fillRule === "nonzero") {
         // check if path is a hole by counting the amount of paths with alternating rotations it has to cross.
         let isHole = true;
         let isHoleFor = null;
@@ -1810,9 +1810,9 @@ export class SVGLoader extends Loader {
     // Returns style object
 
     width = width !== undefined ? width : 1;
-    color = color !== undefined ? color : '#000';
-    lineJoin = lineJoin !== undefined ? lineJoin : 'miter';
-    lineCap = lineCap !== undefined ? lineCap : 'butt';
+    color = color !== undefined ? color : "#000";
+    lineJoin = lineJoin !== undefined ? lineJoin : "miter";
+    lineCap = lineCap !== undefined ? lineCap : "butt";
     miterLimit = miterLimit !== undefined ? miterLimit : 4;
 
     return {
@@ -1852,9 +1852,9 @@ export class SVGLoader extends Loader {
     }
 
     const geometry = new BufferGeometry();
-    geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
-    geometry.setAttribute('normal', new Float32BufferAttribute(normals, 3));
-    geometry.setAttribute('uv', new Float32BufferAttribute(uvs, 2));
+    geometry.setAttribute("position", new Float32BufferAttribute(vertices, 3));
+    geometry.setAttribute("normal", new Float32BufferAttribute(normals, 3));
+    geometry.setAttribute("uv", new Float32BufferAttribute(uvs, 2));
 
     return geometry;
   }
@@ -2020,12 +2020,12 @@ export class SVGLoader extends Loader {
           }
 
           switch (style.strokeLineJoin) {
-            case 'bevel':
+            case "bevel":
               makeSegmentWithBevelJoin(joinIsOnLeftSide, innerSideModified, u1);
 
               break;
 
-            case 'round':
+            case "round":
               // Segment triangles
 
               createSegmentTrianglesWithMiddleSection(joinIsOnLeftSide, innerSideModified);
@@ -2040,15 +2040,15 @@ export class SVGLoader extends Loader {
 
               break;
 
-            case 'miter':
-            case 'miter-clip':
+            case "miter":
+            case "miter-clip":
             default:
               const miterFraction = (strokeWidth2 * style.strokeMiterLimit) / miterLength2;
 
               if (miterFraction < 1) {
                 // The join miter length exceeds the miter limit
 
-                if (style.strokeLineJoin !== 'miter-clip') {
+                if (style.strokeLineJoin !== "miter-clip") {
                   makeSegmentWithBevelJoin(joinIsOnLeftSide, innerSideModified, u1);
                   break;
                 } else {
@@ -2390,7 +2390,7 @@ export class SVGLoader extends Loader {
       // param p1, p2: Left and right cap points
 
       switch (style.strokeLineCap) {
-        case 'round':
+        case "round":
           if (start) {
             makeCircularSector(center, p2, p1, u, 0.5);
           } else {
@@ -2399,7 +2399,7 @@ export class SVGLoader extends Loader {
 
           break;
 
-        case 'square':
+        case "square":
           if (start) {
             tempV2_1.subVectors(p1, center);
             tempV2_2.set(tempV2_1.y, -tempV2_1.x);
@@ -2440,7 +2440,7 @@ export class SVGLoader extends Loader {
 
           break;
 
-        case 'butt':
+        case "butt":
         default:
           // Nothing to do here
           break;

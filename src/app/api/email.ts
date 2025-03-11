@@ -1,12 +1,20 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import fetch from 'node-fetch';
 const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
 const EMAILJS_USER_ID = process.env.EMAILJS_USER_ID;
 const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
 const EMAILJS_ACCESS_TOKEN = process.env.EMAILJS_ACCESS_TOKEN;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { firstName, lastName, email, message } = JSON.parse(req.body);
+interface EmailParams {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
+
+export async function POST(req: Request) {
+  const { firstName, lastName, email, message }: EmailParams = await req.json();
+
+  if (!firstName || !lastName || !email || !message)
+    return Response.json({ message: "Invalid parameters" }, { status: 400 });
 
   try {
     const body = {
@@ -22,23 +30,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     };
 
-    const emailJsRes: any = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
+    const emailJsRes = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': '*',
+        "Content-Type": "application/json",
+        "User-Agent": "*",
       },
       body: JSON.stringify(body),
     });
 
     const text = emailJsRes.text();
 
-    res.status(200).send({
+    Response.json({
       result: text,
-      message: 'Email sent',
+      message: "Email sent",
     });
   } catch (e) {
     console.log(e);
-    res.status(400).send({ message: 'Email not sent' });
+    Response.json({}, { status: 500 });
   }
 }

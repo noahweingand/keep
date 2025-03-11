@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-export const Page404Content = () => {
+export function NotFound() {
   return (
     <main
       className="tui-screen-800-600 black white-text w-full h-full m-auto"
-      style={{ width: '100vw', height: '100vh' }}
+      style={{ width: "100vw", height: "100vh" }}
     >
       <div className="grid grid-cols-3 mb-8">
         <div className="flex items-start col-span-2">
@@ -13,8 +13,8 @@ export const Page404Content = () => {
             role="presentation"
             alt="presentation"
             src="/pcstartup1.png"
-            width="40px"
-            height="40px"
+            width={40}
+            height={40}
           />
           <p className="ml-2">
             Award Medallion BIOS v6.0, An Energy Star Ally <br></br> Copyright (C) 1984-2001, Award
@@ -26,8 +26,8 @@ export const Page404Content = () => {
             role="presentation"
             alt="presentation"
             src="/pcstartup2.png"
-            width="200px"
-            height="150px"
+            width={200}
+            height={150}
           />
         </div>
       </div>
@@ -35,7 +35,7 @@ export const Page404Content = () => {
       <div>Intel(R) Pentium(R) 4 2800 MHz Processor</div>
       <div>Memory Test : &nbsp;&nbsp; 262144K OK</div>
       <div>
-        Award Plug and Play BIOS Extension v1.0A <br></br> Initialize Plug and Play Cards...{' '}
+        Award Plug and Play BIOS Extension v1.0A <br></br> Initialize Plug and Play Cards...{" "}
         <br></br> PNP init Completed
       </div>
       <div>Detecting Primary Parent .....: MAXTOR 6L040J2</div>
@@ -62,4 +62,4 @@ export const Page404Content = () => {
       </div>
     </main>
   );
-};
+}

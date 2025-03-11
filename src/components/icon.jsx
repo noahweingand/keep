@@ -1,12 +1,14 @@
 // @ts-nocheck
-import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import { SVGLoader } from './SVGLoader.jsx';
-import { useRef } from 'react';
+"use client";
+
+import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { SVGLoader } from "./svg-loader.jsx";
+import { useRef } from "react";
 
 export const Icon = ({
   file = undefined,
-  color = '#000000',
-  lightColor = '#ffffff',
+  color = "#000000",
+  lightColor = "#ffffff",
   extrudeSettings = undefined,
   depth = 0.5,
   scale = 1,
@@ -15,34 +17,34 @@ export const Icon = ({
   spin = 0,
   link = undefined,
   style = {},
-  className = '',
+  className = "",
 }) => {
   // Allows using either just a depth value, or a full extrude config
   const extrude = extrudeSettings || { depth: depth };
 
   // Bootleg type checking
   if (file === undefined) {
-    throw new Error('No file specified for Socialicon');
+    throw new Error("No file specified for Socialicon");
   }
   if (position.length !== 3) {
-    throw new Error('Invalid position value. Correct format is [posX, posY, posZ]');
+    throw new Error("Invalid position value. Correct format is [posX, posY, posZ]");
   }
   if (rotation.length !== 3) {
-    throw new Error('Invalid rotation value. Correct format is [rotX, rotY, rotZ]');
+    throw new Error("Invalid rotation value. Correct format is [rotX, rotY, rotZ]");
   }
-  if (typeof extrude !== 'object') {
+  if (typeof extrude !== "object") {
     throw new Error(
-      'extrudeSettings must be an object. View the ThreeJS ExtrudeGeometry docs for more info',
+      "extrudeSettings must be an object. View the ThreeJS ExtrudeGeometry docs for more info",
     );
   }
-  if (typeof link !== 'string' && typeof link !== 'undefined') {
-    throw new Error('Invalid value for link property of Icon, must be a string');
+  if (typeof link !== "string" && typeof link !== "undefined") {
+    throw new Error("Invalid value for link property of Icon, must be a string");
   }
-  if (typeof className !== 'string') {
-    throw new Error('Invalid value for className property of Icon, must be a string');
+  if (typeof className !== "string") {
+    throw new Error("Invalid value for className property of Icon, must be a string");
   }
-  if (typeof style !== 'object') {
-    throw new Error('Invalid value for style property of Icon, must be an object');
+  if (typeof style !== "object") {
+    throw new Error("Invalid value for style property of Icon, must be an object");
   }
 
   function ExtrudedSvg() {
@@ -122,7 +124,7 @@ export const Icon = ({
 
   return (
     <div
-      style={Object.keys(style).length > 0 ? style : { height: '100%', width: '100%' }}
+      style={Object.keys(style).length > 0 ? style : { height: "100%", width: "100%" }}
       className={className}
     >
       <Canvas camera={{ position: [0, 0, 100] }}>
