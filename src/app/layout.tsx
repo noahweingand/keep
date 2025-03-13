@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import { Menu } from "@/components";
 
 const font = localFont({ src: "./assets/rommono.woff2" });
 
@@ -41,7 +42,10 @@ export default function Layout({
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="/keepelf_black.svg" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Menu />
+        {children}
+      </body>
     </html>
   );
 }
