@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="w-full h-screen m-auto bg-blue-950/90" style={{ width: "100vw" }}>
-      <div className="flex flex-col sm:flex-row min-h-screen space-y-6 sm:space-y-0 justify-center items-center mx-2 sm:mx-8">
+      <div className="flex flex-col sm:flex-row min-h-screen space-y-6 sm:space-y-0 justify-center items-center mx-3 sm:mx-8">
         <div className="relative mr-0 sm:mr-12">
           <div
             className="absolute animate-pulse rounded-full bg-gradient-to-l from-[#4E4A46] via-[#97805A] to-[#E8783A] blur-2xl opacity-10"
