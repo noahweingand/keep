@@ -1,5 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
+
 import "./globals.css";
+
+const font = localFont({ src: "./assets/rommono.woff2" });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -32,7 +36,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-black overflow-x-hidden">
+    <html lang="en" className={`${font.className} bg-black overflow-x-hidden`}>
       <head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="/keepelf_black.svg" />
