@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fmt": "prettier"
+    "fmt": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
