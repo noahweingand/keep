@@ -5,8 +5,8 @@ import { Socials } from "./socials";
 
 export function Menu() {
   return (
-    <header className="flex flex-row justify-center sm:justify-between items-center bg-black text-white px-2 sm:px-4 py-2">
-      <div className="absolute top-2 left-2 sm:static sm:top-auto sm:left-auto flex flex-row items-center">
+    <header className="flex flex-row justify-center sm:justify-between items-center bg-black text-white px-2 sm:px-4 py-3">
+      <div className="absolute top-2 left-1 sm:static sm:top-auto sm:left-auto flex flex-row items-center">
         <SideMenu />
 
         <nav>
@@ -36,7 +36,7 @@ export function Menu() {
       </div>
 
       <h1 className="mt-2 sm:mt-0">
-        <Link className="text-2xl sm:text-3xl" href="/">
+        <Link className="text-2xl sm:text-3xl leading-none" href="/">
           K E E P
         </Link>
       </h1>

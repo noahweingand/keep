@@ -42,7 +42,7 @@ export default function Layout({
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="/keepelf_black.svg" />
       </head>
-      <body>
+      <body className="min-h-svh flex flex-col">
         <Menu />
         {children}
       </body>
