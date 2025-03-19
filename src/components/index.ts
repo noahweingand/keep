@@ -20,6 +20,7 @@ import {
   DrawerDescription,
 } from "./ui/drawer";
 import { Button } from "./button";
+import { ButtonLink } from "./button-link";
 import { ContactForm } from "./contact-form";
 import { Header } from "./header";
 import { Menu } from "./menu";
@@ -46,6 +47,7 @@ export {
   DrawerTitle,
   DrawerDescription,
   Button,
+  ButtonLink,
   ContactForm,
   Header,
   Menu,

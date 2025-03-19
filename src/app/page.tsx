@@ -40,17 +40,18 @@ function Item() {
           ></div>
           <Image
             className="relative rounded-lg shadow-lg"
-            src="/images/albums/almost_static.jpeg"
+            src="/images/albums/almost_static.jpg"
             alt="Album artwork for Almost Static by Keep"
             width={500}
             height={500}
           />
         </div>
-        <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left">
+        <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left mr-2">
           <h2 className="text-4xl font-semibold mb-3">Almost Static</h2>
           <h3 className="text-xl font-thin">Our newest single {`"Single Name"`} is out now. </h3>
-          <div className="flex flex-row space-x-5 items-center mt-4 justify-center sm:justify-start">
+          <div className="flex flex-row space-x-4 items-center mt-4 justify-center sm:justify-start">
             <Button>Pre-order</Button>
+            <Button>Watch</Button>
             <Button>Listen</Button>
           </div>
         </div>
