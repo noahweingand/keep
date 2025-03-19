@@ -87,6 +87,8 @@ const releases: Array<Release> = [
 ];
 
 function Release({ name, artworkPath, type, spotifyUrl, appleUrl, purchaseUrl }: Release) {
+  console.log(spotifyUrl, appleUrl, purchaseUrl);
+
   return (
     <CarouselItem className="basis-full pl-6">
       <div className="flex flex-col sm:flex-row justify-center items-center pt-20 pb-12">
@@ -130,10 +132,10 @@ function Biography() {
           review of their second album
         </a>
         , Happy In Here, it is stated that “even with these comparisons and any accuracy they could
-        possess, Keep are a band that's not only cut their own sort of path, but have become quite
-        seasoned at it.” Their music has spanned a number of genres over the years, but most often
-        falls under the banner of shoegaze. Regardless of specific distinctions, Keep sits firmly in
-        the web of alternative rock music.{" "}
+        possess, Keep are a band that&apos;s not only cut their own sort of path, but have become
+        quite seasoned at it.” Their music has spanned a number of genres over the years, but most
+        often falls under the banner of shoegaze. Regardless of specific distinctions, Keep sits
+        firmly in the web of alternative rock music.{" "}
         <a className="underline" href="https://audiotree.tv/session/keep">
           Audiotree
         </a>{" "}
@@ -143,19 +145,19 @@ function Biography() {
 
       <p>
         Keep is a band that is tried and true. With over ten years of experience, three albums, a
-        host of EP's, and countless tours (both stateside and abroad) under their belt, they are
-        only just hitting their stride. Almost Static will be the defining Keep record, as the many
-        influences that the band has historically displayed are pieced together in a more seamless
-        manner than they've ever been. Additionally, the band branches into new territory on tracks
-        like Smile Down (Into Nothing), Bermuda, and Almost Static.
+        host of EP&apos;s, and countless tours (both stateside and abroad) under their belt, they
+        are only just hitting their stride. Almost Static will be the defining Keep record, as the
+        many influences that the band has historically displayed are pieced together in a more
+        seamless manner than they&apos;ve ever been. Additionally, the band branches into new
+        territory on tracks like Smile Down (Into Nothing), Bermuda, and Almost Static.
       </p>
 
       <p>
         This is an album built for long hours spent in the car which is frequently reflected in the
-        lyrics. Almost Static explores many of thoughts that might cross one's mind on such
-        expansive journeys. It's a driving and anthemic record that navigates the meandering nature
-        of a world that won't slow down. It's a soundtrack for hurtling further and further into
-        oblivion.
+        lyrics. Almost Static explores many of thoughts that might cross one&apos;s mind on such
+        expansive journeys. It&apos;s a driving and anthemic record that navigates the meandering
+        nature of a world that won&apos;t slow down. It&apos;s a soundtrack for hurtling further and
+        further into oblivion.
       </p>
 
       <p>
