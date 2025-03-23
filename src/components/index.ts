@@ -1,3 +1,5 @@
+import { AudiotreeVideo } from "./carousel-items/audiotree-video";
+import { FunFactsVideo } from "./carousel-items/fun-facts-video";
 import { KeepElfSVG } from "./svgs/KeepElfSVG";
 import { KeepShirtSVG } from "./svgs/KeepShirtSVG";
 import {
@@ -29,6 +31,8 @@ import { PromoSection } from "./promo-section";
 import { TourDates } from "./tour-dates";
 
 export {
+  AudiotreeVideo,
+  FunFactsVideo,
   KeepElfSVG,
   KeepShirtSVG,
   Carousel,

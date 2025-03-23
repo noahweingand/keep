@@ -27,7 +27,7 @@ export function Menu() {
               </Link>
             </li>
             <li>
-              <Link className="hover:underline" href="/store">
+              <Link className="hover:underline" href="/">
                 Store
               </Link>
             </li>

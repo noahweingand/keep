@@ -50,17 +50,14 @@ export function SideMenu() {
                 </Link>
               </li>
               <li className="flex">
-                <Link
-                  className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
-                  href="/store"
-                >
+                <Link className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold" href="/">
                   Store
                 </Link>
               </li>
             </ul>
           </nav>
 
-          <div className="flex flex-row justify-evenly my-2">
+          <div className="flex flex-row justify-evenly mb-8">
             <Socials />
           </div>
         </div>

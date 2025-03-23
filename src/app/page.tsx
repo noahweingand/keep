@@ -1,12 +1,17 @@
 import Image from "next/image";
 
+import { FaSpotify } from "react-icons/fa6";
+import { SiApplemusic } from "react-icons/si";
+
 import {
-  Button,
+  AudiotreeVideo,
+  ButtonLink,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  FunFactsVideo,
 } from "@/components";
 
 export default function Home() {
@@ -14,9 +19,9 @@ export default function Home() {
     <main className="flex-1 flex items-center justify-center bg-blue-950/90">
       <Carousel className="w-full max-w-7xl">
         <CarouselContent className="min-h-1/2 -ml-6 py-12">
-          <Item />
-          <Item />
-          <Item />
+          <Announcement />
+          <FunFactsVideo />
+          <AudiotreeVideo />
         </CarouselContent>
         <div className="flex justify-center gap-6 sm:gap-4">
           <CarouselPrevious className="static text-white bg-blue-950/90" />
@@ -27,7 +32,7 @@ export default function Home() {
   );
 }
 
-function Item() {
+function Announcement() {
   return (
     <CarouselItem className="basis-full pl-6">
       <div className="flex flex-col sm:flex-row justify-center items-center pt-20 pb-12">
@@ -48,11 +53,15 @@ function Item() {
         </div>
         <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left mr-2">
           <h2 className="text-4xl font-semibold mb-3">Almost Static</h2>
-          <h3 className="text-xl font-thin">Our newest single {`"Single Name"`} is out now. </h3>
+          <h3 className="text-xl font-thin">Our latest album out everywhere May 30th</h3>
           <div className="flex flex-row space-x-4 items-center mt-4 justify-center sm:justify-start">
-            <Button>Pre-order</Button>
-            <Button>Watch</Button>
-            <Button>Listen</Button>
+            <ButtonLink href="">Pre-order</ButtonLink>
+            <ButtonLink href="">
+              <FaSpotify size={24} />
+            </ButtonLink>
+            <ButtonLink href="">
+              <SiApplemusic size={24} />
+            </ButtonLink>
           </div>
         </div>
       </div>

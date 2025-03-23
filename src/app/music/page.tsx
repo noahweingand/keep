@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import { FaSpotify } from "react-icons/fa6";
+import { SiApplemusic } from "react-icons/si";
+
 import {
   ButtonLink,
   Carousel,
@@ -13,82 +16,89 @@ interface Release {
   name: string;
   artworkPath: string;
   type: "A" | "EP" | "S";
+  year: number;
   spotifyUrl: string;
   appleUrl: string;
-  purchaseUrl: string;
+  watchUrl: string;
 }
 
-// TODO: Info for this
 const releases: Array<Release> = [
   {
     name: "Almost Static",
     artworkPath: "/images/albums/almost_static.jpg",
     type: "A",
+    year: 2025,
+    // TODO: URL for spotify / apple
     spotifyUrl: "",
     appleUrl: "",
-    purchaseUrl: "",
+    watchUrl: "https://www.youtube.com/watch?v=40G4MnPcUKI",
   },
   {
     name: "Keep on Audiotree Live",
     artworkPath: "/images/albums/audiotree.jpeg",
     type: "EP",
+    year: 2023,
     spotifyUrl: "https://open.spotify.com/album/41qpoV0mpd808mQlhNUPn3?si=TkLZ1YtCQAGCcdxV8tijCQ",
     appleUrl: "",
-    purchaseUrl: "",
+    watchUrl: "https://www.youtube.com/watch?v=Bo-lWMJWl0Q",
   },
   {
     name: "Sodawater",
     artworkPath: "/images/albums/sodawater.jpeg",
     type: "S",
+    year: 2023,
     spotifyUrl: "https://open.spotify.com/album/7ljFCTIK7a8GOzGRO1Qi9e?si=fSNT6Wb_TH-YBXFvEfNJ6Q",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/sodawater/1709942847?i=1709942849",
+    watchUrl: "",
   },
   {
     name: "Happy In Here",
     artworkPath: "/images/albums/happy_in_here.jpeg",
     type: "A",
+    year: 2023,
     spotifyUrl: "https://open.spotify.com/album/6ocySt3TLn4xSVlJcWELIY?si=fzcCNYTbRYaYvfn7q6W5bQ",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/happy-in-here/1709942581",
+    watchUrl: "",
   },
   {
     name: "Keep",
     artworkPath: "/images/albums/keep.jpeg",
     type: "EP",
+    year: 2020,
     spotifyUrl: "https://open.spotify.com/album/368IJWRj0GK8cXiYc89smp?si=8BxHnTHnRzuVm99Ypx0WJQ",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/keep-ep/1709942890",
+    watchUrl: "",
   },
   {
     name: "For Your Joy",
     artworkPath: "/images/albums/for_your_joy.jpeg",
     type: "A",
+    year: 2017,
     spotifyUrl: "https://open.spotify.com/album/347uLPASJGabNrgjF5qjfZ?si=AjkEPVj4RJ-V3C-pWA1WDQ",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/for-your-joy/1709942577",
+    watchUrl: "",
   },
   {
     name: "Psychorama",
     artworkPath: "/images/albums/psychorama.jpeg",
     type: "S",
+    year: 2015,
     spotifyUrl: "https://open.spotify.com/album/1gB2Y3I7ej1geEWnI4n2NT?si=lb3ymjs_RYm16sTJ_O910w",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/psychorama-single/1709945254",
+    watchUrl: "",
   },
   {
     name: "Hypnosis for Sleep",
     artworkPath: "/images/albums/hypnosis_for_sleep.jpeg",
     type: "S",
+    year: 2014,
     spotifyUrl: "https://open.spotify.com/album/1gB2Y3I7ej1geEWnI4n2NT?si=lb3ymjs_RYm16sTJ_O910w",
-    appleUrl: "",
-    purchaseUrl: "",
+    appleUrl: "https://music.apple.com/us/album/hypnosis-for-sleep-single/1709942869",
+    watchUrl: "",
   },
 ];
 
-function Release({ name, artworkPath, type, spotifyUrl, appleUrl, purchaseUrl }: Release) {
-  console.log(spotifyUrl, appleUrl, purchaseUrl);
-
+function Release({ name, artworkPath, year, spotifyUrl, appleUrl, watchUrl }: Release) {
   return (
     <CarouselItem className="basis-full pl-6">
       <div className="flex flex-col sm:flex-row justify-center items-center pt-20 pb-12">
@@ -109,11 +119,20 @@ function Release({ name, artworkPath, type, spotifyUrl, appleUrl, purchaseUrl }:
         </div>
         <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left mr-2">
           <h2 className="text-4xl font-semibold mb-3">{name}</h2>
-          <h3 className="text-xl font-thin">{type}</h3>
+          <h3 className="text-xl font-thin">{year}</h3>
           <div className="flex flex-row space-x-4 items-center mt-4 justify-center sm:justify-start">
             {name === "Almost Static" && <ButtonLink>Pre-order</ButtonLink>}
-            {name === "Almost Static" && <ButtonLink>Watch</ButtonLink>}
-            <ButtonLink>Listen</ButtonLink>
+            {watchUrl && <ButtonLink href={watchUrl}>Watch</ButtonLink>}
+            <>
+              <ButtonLink href={spotifyUrl}>
+                <FaSpotify size={24} />
+              </ButtonLink>
+              {appleUrl && (
+                <ButtonLink href={appleUrl}>
+                  <SiApplemusic size={24} />
+                </ButtonLink>
+              )}
+            </>
           </div>
         </div>
       </div>
@@ -187,7 +206,7 @@ export default function Music() {
           </div>
         </Carousel>
 
-        <div className="text-white space-y-5 md:space-y-3 mx-3 md:mx-12 mt-8 2xl:ml-0 2xl:mr-5 2xl:mt-32">
+        <div className="text-white text-justify space-y-5 md:space-y-3 mx-3 md:mx-12 my-8 2xl:ml-0 2xl:mr-8 2xl:mt-32">
           <Biography />
         </div>
       </div>
