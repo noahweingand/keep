@@ -34,7 +34,7 @@ export default function Home() {
 
 function Announcement() {
   return (
-    <CarouselItem className="basis-full pl-6">
+    <CarouselItem className="basis-full pl-6 mr-24">
       <div className="flex flex-col sm:flex-row justify-center items-center pt-20 pb-12">
         <div className="relative mr-3 ml-3 sm:mr-12 sm:ml-6 xl:ml-0">
           <div
