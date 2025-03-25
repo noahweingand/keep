@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import {
@@ -11,10 +13,15 @@ import {
 } from "@/components";
 
 import { Socials } from "./socials";
+import { useCallback, useState } from "react";
 
 export function SideMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = useCallback(() => setIsOpen(false), []);
+
   return (
-    <Drawer direction="left">
+    <Drawer open={isOpen} onOpenChange={setIsOpen} direction="left">
       <DrawerTrigger>
         <KeepElfSVG color="#ffffff" className="block sm:hidden h-12 w-12" />
       </DrawerTrigger>
@@ -29,7 +36,11 @@ export function SideMenu() {
           <nav>
             <ul className="text-xl w-full" role="list">
               <li className="flex">
-                <Link className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold" href="/">
+                <Link
+                  className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
+                  href="/"
+                  onClick={handleClose}
+                >
                   Home
                 </Link>
               </li>
@@ -37,6 +48,7 @@ export function SideMenu() {
                 <Link
                   className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
                   href="/tour"
+                  onClick={handleClose}
                 >
                   Tour
                 </Link>
@@ -45,12 +57,17 @@ export function SideMenu() {
                 <Link
                   className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
                   href="/music"
+                  onClick={handleClose}
                 >
                   Music
                 </Link>
               </li>
               <li className="flex">
-                <Link className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold" href="/">
+                <Link
+                  className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
+                  href="/"
+                  onClick={handleClose}
+                >
                   Store
                 </Link>
               </li>
