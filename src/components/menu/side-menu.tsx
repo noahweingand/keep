@@ -25,7 +25,7 @@ export function SideMenu() {
       <DrawerTrigger>
         <KeepElfSVG color="#ffffff" className="block sm:hidden h-12 w-12" />
       </DrawerTrigger>
-      <DrawerContent className="bg-black mt-14 text-white">
+      <DrawerContent className="bg-slate-950/90 mt-14 text-white">
         <DrawerHeader>
           <DrawerTitle hidden>Keep side navigation</DrawerTitle>
           <DrawerDescription hidden>
@@ -33,8 +33,8 @@ export function SideMenu() {
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col h-full justify-between">
-          <nav>
-            <ul className="text-xl w-full" role="list">
+          <nav className="mt-4">
+            <ul className="text-xl w-full space-y-1" role="list">
               <li className="flex">
                 <Link
                   className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
@@ -65,8 +65,7 @@ export function SideMenu() {
               <li className="flex">
                 <Link
                   className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
-                  href="/"
-                  onClick={handleClose}
+                  href="https://signalnoiserecords.com/products/keep-almost-static"
                 >
                   Store
                 </Link>

@@ -28,9 +28,8 @@ const releases: Array<Release> = [
     artworkPath: "/images/albums/almost_static.jpg",
     type: "A",
     year: 2025,
-    // TODO: URL for spotify / apple
-    spotifyUrl: "",
-    appleUrl: "",
+    spotifyUrl: "https://open.spotify.com/artist/0oPLf7tpRZAVZMHWA0Nu7W?si=QukS94JwRWGBVZqw2pW13A",
+    appleUrl: "https://music.apple.com/us/artist/keep/1274176252",
     watchUrl: "https://www.youtube.com/watch?v=40G4MnPcUKI",
   },
   {
@@ -120,8 +119,17 @@ function Release({ name, artworkPath, year, spotifyUrl, appleUrl, watchUrl }: Re
         <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left mr-2">
           <h2 className="text-4xl font-semibold mb-3">{name}</h2>
           <h3 className="text-xl font-thin">{year}</h3>
-          <div className="flex flex-row space-x-4 items-center mt-4 justify-center sm:justify-start">
-            {name === "Almost Static" && <ButtonLink>Pre-order</ButtonLink>}
+          <div className="flex flex-row flex-wrap gap-4 items-center mt-4 justify-center sm:justify-start">
+            {name === "Almost Static" && (
+              <ButtonLink href="https://signalnoiserecords.com/products/keep-almost-static">
+                Pre-order
+              </ButtonLink>
+            )}
+            {name === "Happy In Here" && (
+              <ButtonLink href="https://signalnoiserecords.com/products/keep-happy-in-here">
+                Buy
+              </ButtonLink>
+            )}
             {watchUrl && <ButtonLink href={watchUrl}>Watch</ButtonLink>}
             <>
               <ButtonLink href={spotifyUrl}>
@@ -192,7 +200,7 @@ function Biography() {
 
 export default function Music() {
   return (
-    <main className="flex-1 flex items-center justify-center bg-blue-950/90">
+    <main className="flex-1 flex items-center justify-center bg-black">
       <div className="inline 2xl:flex 2xl:justify-between w-full">
         <Carousel className="w-full max-w-6xl">
           <CarouselContent className="min-h-1/2 -ml-6 py-12">
@@ -201,96 +209,15 @@ export default function Music() {
             ))}
           </CarouselContent>
           <div className="flex justify-center gap-6 sm:gap-4">
-            <CarouselPrevious className="static text-white bg-blue-950/90" />
-            <CarouselNext className="static text-white bg-blue-950/90" />
+            <CarouselPrevious className="static text-white bg-black/90" />
+            <CarouselNext className="static text-white bg-black/90" />
           </div>
         </Carousel>
 
-        <div className="text-white text-justify space-y-5 md:space-y-3 mx-3 md:mx-12 my-8 2xl:ml-0 2xl:mr-8 2xl:mt-32">
+        <div className="text-white break-words text-justify space-y-5 md:space-y-3 mx-3 md:mx-12 my-8 2xl:ml-0 2xl:mr-8 2xl:mt-32">
           <Biography />
         </div>
       </div>
     </main>
   );
 }
-
-// const Biography = {
-//   PartOne: () => (
-//     <>
-//       <p>
-//         Keep is a band from Richmond, VA that was formed in 2013. They are heavily influenced by the
-//         likes of The Cure, The Smashing Pumpkins, and Slowdive, but that only scratches the surface.
-//         In a{" "}
-//         <a className="underline" href="https://everythingisnoise.net/reviews/keep-happy-in-here/">
-//           review of their second album
-//         </a>
-//         , Happy In Here, it is stated that “even with these comparisons and any accuracy they could
-//         possess, Keep are a band that's not only cut their own sort of path, but have become quite
-//         seasoned at it.” Their music has spanned a number of genres over the years, but most often
-//         falls under the banner of shoegaze. Regardless of specific distinctions, Keep sits firmly in
-//         the web of alternative rock music.{" "}
-//         <a className="underline" href="https://audiotree.tv/session/keep">
-//           Audiotree
-//         </a>{" "}
-//         aptly described the sound as “grand and majestic”, adding that it is “ensconced in an all
-//         consuming mist of heavy noise.”
-//       </p>
-
-//       <p>
-//         Keep is a band that is tried and true. With over ten years of experience, three albums, a
-//         host of EP's, and countless tours (both stateside and abroad) under their belt, they are
-//         only just hitting their stride. Almost Static will be the defining Keep record, as the many
-//         influences that the band has historically displayed are pieced together in a more seamless
-//         manner than they've ever been. Additionally, the band branches into new territory on tracks
-//         like Smile Down (Into Nothing), Bermuda, and Almost Static.
-//       </p>
-//     </>
-//   ),
-//   PartTwo: () => (
-//     <>
-//       <p>
-//         This is an album built for long hours spent in the car which is frequently reflected in the
-//         lyrics. Almost Static explores many of thoughts that might cross one's mind on such
-//         expansive journeys. It's a driving and anthemic record that navigates the meandering nature
-//         of a world that won't slow down. It's a soundtrack for hurtling further and further into
-//         oblivion.
-//       </p>
-
-//       <p>
-//         Recording sessions for the album were split between Electrical Audio in Chicago and Earth
-//         Analog in Tolono, Illinois. It was produced and engineered by Zac Montez (Whirr, Cloakroom)
-//         who helmed the previous two Keep releases. As for the future, the band plans to tour
-//         extensively in support of Almost Static. This will kick off with a string of dates
-//         supporting Turnover on their 10th anniversary tour for Peripheral Vision.
-//       </p>
-//     </>
-//   ),
-// };
-
-// export default function Music() {
-//   return (
-//     <main className="flex-1 flex items-center justify-center bg-blue-950/90">
-//       <div className="inline 2xl:flex 2xl:justify-between w-full">
-//         <Carousel className="w-full max-w-6xl 2xl:order-2">
-//           <CarouselContent className="min-h-1/2 -ml-6 py-12">
-//             {releases.map((release) => (
-//               <Release key={release.name} {...release} />
-//             ))}
-//           </CarouselContent>
-//           <div className="flex justify-center gap-6 sm:gap-4">
-//             <CarouselPrevious className="static text-white bg-blue-950/90" />
-//             <CarouselNext className="static text-white bg-blue-950/90" />
-//           </div>
-//         </Carousel>
-
-//         <div className="text-white space-y-5 md:space-y-3 ml-6 2xl:order-1 2xl:mt-32">
-//           <Biography.PartOne />
-//         </div>
-
-//         <div className="text-white space-y-5 md:space-y-3 mr-6 mt-5 order-3 2xl:mt-32">
-//           <Biography.PartTwo />
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
