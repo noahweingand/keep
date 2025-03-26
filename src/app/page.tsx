@@ -51,9 +51,7 @@ function Announcement() {
         </div>
         <div className="flex flex-col h-full justify-center text-white text-center mt-12 sm:mt-0 sm:text-left mr-2">
           <h2 className="text-4xl font-semibold mb-3">Almost Static</h2>
-          <h3 className="text-xl font-thin">
-            <i>Almost Static</i> — our new album — is out May 30.
-          </h3>
+          <h3 className="text-xl font-thin">Almost Static out May 30, 2025.</h3>
           <div className="flex flex-row space-x-4 items-center mt-4 justify-center sm:justify-start">
             <ButtonLink href="https://signalnoiserecords.com/products/keep-almost-static">
               Pre-order
