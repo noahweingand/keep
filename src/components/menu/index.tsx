@@ -27,10 +27,7 @@ export function Menu() {
               </Link>
             </li>
             <li>
-              <Link
-                className="hover:underline"
-                href="https://signalnoiserecords.com/products/keep-almost-static"
-              >
+              <Link className="hover:underline" href="https://store.keep.band">
                 Store
               </Link>
             </li>

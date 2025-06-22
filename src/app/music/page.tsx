@@ -122,7 +122,7 @@ function Release({ name, artworkPath, year, spotifyUrl, appleUrl, watchUrl }: Re
           <div className="flex flex-row flex-wrap gap-4 items-center mt-4 justify-center sm:justify-start">
             {name === "Almost Static" && (
               <ButtonLink href="https://signalnoiserecords.com/products/keep-almost-static">
-                Pre-order
+                Buy
               </ButtonLink>
             )}
             {name === "Happy In Here" && (

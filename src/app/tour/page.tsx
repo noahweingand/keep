@@ -60,6 +60,7 @@ export default function Tour() {
       </div>
       <h1 className="font-semibold text-6xl mt-8">Tour</h1>
       <div className="flex-col divide-y w-full justify-center mt-8 font-light text-xl sm:text-2xl">
+        {!dates?.length && <h2>No upcoming dates.</h2>}
         {dates.map((tourDate) => (
           <TourDate key={tourDate.id} {...tourDate} />
         ))}

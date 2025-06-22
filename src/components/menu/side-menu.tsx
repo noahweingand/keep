@@ -65,7 +65,7 @@ export function SideMenu() {
               <li className="flex">
                 <Link
                   className="w-full px-3 py-2 hover:bg-white/30 hover:font-semibold"
-                  href="https://signalnoiserecords.com/products/keep-almost-static"
+                  href="https://store.keep.band"
                 >
                   Store
                 </Link>
